@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  form(method="post")
+    label() Lookup IP address: 
+    input(type="text" name="ip")
+    button(class="button") Submit
+
+  h1 #{ip}
+
+  if error 
+    p= error
+  else if ip
+    p Is located at #{latitude}, #{longitude} in #{city}, #{state}
